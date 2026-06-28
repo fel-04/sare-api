@@ -25,12 +25,10 @@ class StoreStudentRequest extends FormRequest
     {
         return [
             'student_number' => 'required|unique:students,student_number',
-            'enrollment_date' => 'required|date|before_or_equal:today',
-            'admission_date' => 'required|date|before_or_equal:today',
-            'grade_level_id' => 'required|exists:grade_levels,id',
-            //'group_id' => 'required|exists:groups,id',
-            'school_period_id' => 'required|exists:school_periods,id',
+            'enrollment_date' => 'required|date|after_or_equal:today',
+            'admission_date' => 'required|date|after_or_equal:today',
             'person_id' => 'required|exists:persons,id',
+            'status_student_id' => 'required|exists:status_students,id',
         ];
     }
 }

@@ -19,10 +19,8 @@ return new class extends Migration
             $table->date('admission_date'); // fecha de admisión
 
             // foreing keys
-            $table->unsignedBigInteger('grade_level_id')->constrained();
-            $table->foreign('grade_level_id')->references('id')->on('grade_levels');
-            $table->unsignedBigInteger('school_period_id')->constrained();
-            $table->foreign('school_period_id')->references('id')->on('school_periods');
+            $table->unsignedBigInteger('status_student_id')->constrained();
+            $table->foreign('status_student_id')->references('id')->on('status_students');
             $table->unsignedBigInteger('person_id')->constrained();
             $table->foreign('person_id')->references('id')->on('persons');
 

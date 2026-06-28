@@ -23,8 +23,6 @@ class Student extends Model
         'student_number',
         'enrollment_date',//fecha de inscripción
         'admission_date',// fecha de admisión
-        'grade_level_id',
-        'school_period_id',
         'status_student_id',
     ];
 
