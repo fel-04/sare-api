@@ -11,13 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('positions', function (Blueprint $table) {
+        Schema::create('employee_contracts', function (Blueprint $table) {
             $table->id();
-            $table->string('uuid')->unique();
-            $table->string('name');
-            $table->string('description')->nullable();
-            $table->unsignedBigInteger('deparment_id')->constrained();
-            $table->foreign('deparment_id')->references('id')->on('departments');
+            $table->uuid('uuid')->unique();
+            $table->decimal('salary',8,2);
+            $table->date('start_date');
+            $table->date('end_date')->nullable();
+            $table->integer('hourly_rate');
+            $table->unsignedBigInteger('employee_id')->constrained();
+            $table->foreign('employee_id')->references('id')->on('employees');
+            $table->unsignedBigInteger('contract_type_id')->constrained();
+            $table->foreign('contract_type_id')->references('id')->on('contract_types');
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
@@ -32,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('positions');
+        Schema::dropIfExists('employee_contracts');
     }
 };

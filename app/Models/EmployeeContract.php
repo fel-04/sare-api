@@ -6,7 +6,7 @@ use App\Traits\UsesUuidForRoutes;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 
-class Employee extends Model
+class EmployeeContract extends Model
 {
     use HasUuids;
     use UsesUuidForRoutes;
@@ -18,14 +18,12 @@ class Employee extends Model
      */
     protected $fillable = [
         'uuid',
-        'rfc',
-        'employee_number',
-        'hire_date',
-        'termination_date',
-        'person_id',
-        'position_id',
-        'work_shift_id'
-
+        'salary',
+        'start_date',
+        'end_date',
+        'hourly_rate',
+        'employee_id',
+        'contract_type_id',
     ];
 
     /**

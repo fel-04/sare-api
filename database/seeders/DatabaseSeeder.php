@@ -23,13 +23,15 @@ class DatabaseSeeder extends Seeder
         ]);
         $this->call([
             GenderSeeder::class,
+            DepartmentSeeder::class,
+            PositionsSeeder::class,
             StatusTeacherSeeder::class,
             StatusStudentSeeder::class,
             EmployeeTypeSeeder::class,
             SchoolPeriodSeeder::class,
             GradeLevelSeeder::class,
             GroupSeeder::class,
-
+            ContractTypesSeeder::class
         ]);
     }
 }

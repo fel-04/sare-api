@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('employee_contracts', function (Blueprint $table) {
+        Schema::create('contract_types', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('employee_id')->constrained();
-            $table->foreign('employee_id')->references('id')->on('employees');
-            $table->string('salary');
-            $table->string('employment_type');
-            $table->string('start_date');
-            $table->string('end_date');
+            $table->uuid('uuid')->unique();
+            $table->string('name');
+            $table->string('description')->nullable();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
@@ -33,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('employee_contracts');
+        Schema::dropIfExists('contract_types');
     }
 };

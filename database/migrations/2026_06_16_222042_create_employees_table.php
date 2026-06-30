@@ -20,6 +20,12 @@ return new class extends Migration
             //foreign keys
             $table->unsignedBigInteger('person_id')->constrained();
             $table->foreign('person_id')->references('id')->on('persons');
+            $table->unsignedBigInteger('position_id')->constrained();
+            $table->foreign('position_id')->references('id')->on('positions');
+           /* $table->unsignedBigInteger('work_shift_id')->constrained();
+            $table->foreign('work_shift_id')->nullable()->references('id')->on('employees');*/
+            $table->date('hire_date');
+            $table->date('termination_date')->nullable();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
