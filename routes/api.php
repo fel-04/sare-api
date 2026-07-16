@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\EmployeeContractController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EnrollmentController;
@@ -20,3 +21,4 @@ Route::resource('enrollments', EnrollmentController::class)->only(['store', 'sho
 Route::resource('groups', GroupController::class)->only(['store', 'show']);
 Route::resource('employees', EmployeeController::class)->only(['store', 'show']);
 Route::resource('employees-contracts', EmployeeContractController::class)->only(['store', 'show']);
+Route::resource('classrooms', ClassroomController ::class)->only(['store', 'show']);

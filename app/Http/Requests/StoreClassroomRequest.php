@@ -2,25 +2,17 @@
 
 namespace App\Http\Requests;
 
-use App\Traits\ResolvesUuids;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreTeacherRequest extends FormRequest
+class StoreClassroomRequest extends FormRequest
 {
-    use ResolvesUuids;
-
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
         return true;
-    }
-
-    protected function prepareForValidation(): void
-    {
-        $this->resolveUuidsToIds();
     }
 
     /**
@@ -31,14 +23,7 @@ class StoreTeacherRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'status_teacher_uuid' => 'required|uuid|exists:status_teachers,uuid',
-            'person_uuid' => 'required|uuid|exists:persons,uuid',
-
-            'status_teacher_id' => 'sometimes|exists:status_teachers,id',
-            'person_id' => 'sometimes|exists:persons,id',
-
+            'name'=>'required|string|max:255'
         ];
-
-
     }
 }
