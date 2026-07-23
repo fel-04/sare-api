@@ -14,8 +14,6 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid')->unique();
-            $table->string('name');
-            $table->string('description')->nullable();
             $table->unsignedBigInteger('group_id')->constrained();
             $table->foreign('group_id')->references('id')->on('groups');
             $table->unsignedBigInteger('subject_id')->constrained();
