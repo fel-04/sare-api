@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Controllers\ClassroomController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EmployeeContractController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +24,5 @@ Route::resource('groups', GroupController::class)->only(['store', 'show']);
 Route::resource('employees', EmployeeController::class)->only(['store', 'show']);
 Route::resource('employees-contracts', EmployeeContractController::class)->only(['store', 'show']);
 Route::resource('classrooms', ClassroomController ::class)->only(['store', 'show']);
+Route::resource('courses', CourseController::class)->only(['store', 'show']);
+Route::resource('subjects', SubjectController::class)->only(['store', 'show']);
