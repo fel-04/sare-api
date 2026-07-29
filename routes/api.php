@@ -2,11 +2,14 @@
 
 use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\EmergencyContactController;
 use App\Http\Controllers\EmployeeContractController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EnrollementController;
 use App\Http\Controllers\EnrollmentController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\PersonController;
+use App\Http\Controllers\ScholarshipController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
@@ -26,3 +29,6 @@ Route::resource('employees-contracts', EmployeeContractController::class)->only(
 Route::resource('classrooms', ClassroomController ::class)->only(['store', 'show']);
 Route::resource('courses', CourseController::class)->only(['store', 'show']);
 Route::resource('subjects', SubjectController::class)->only(['store', 'show']);
+Route::resource('emergency-contacts', EmergencyContactController::class)->only(['store', 'show']);
+Route::resource('enrollments', EnrollementController::class)->only(['store', 'show']);
+Route::resource('scholarships', ScholarshipController::class)->only(['store', 'show']);
