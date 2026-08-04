@@ -32,7 +32,9 @@ class DatabaseSeeder extends Seeder
             SchoolPeriodSeeder::class,
             GradeLevelSeeder::class,
             GroupSeeder::class,
-            ContractTypesSeeder::class
+            ContractTypesSeeder::class,
+            ChargeTypeSeeder::class,
+            ChargeStatusSeeder::class,
         ]);
     }
 }

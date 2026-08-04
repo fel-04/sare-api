@@ -11,17 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('enrollments', function (Blueprint $table) {
+        Schema::create('student_charges', function (Blueprint $table) {
             $table->id();
-            $table->uuid('uuid')->unique();
-            $table->boolean('payment')->default(false);
-            $table->decimal('amount', 10, 2)->nullable();
+            $table->uuid()->unique();
+            $table->date('due_date');
+            $table->decimal('amount', 10, 2);
+
             $table->unsignedBigInteger('student_id')->constrained();
             $table->foreign('student_id')->references('id')->on('students');
-            $table->unsignedBigInteger('group_id')->constrained();
-            $table->foreign('group_id')->references('id')->on('groups');
-            $table->unsignedBigInteger('school_period_id')->constrained();
-            $table->foreign('school_period_id')->references('id')->on('school_periods');
+
+            $table->unsignedBigInteger('enrollment_id')->constrained();
+            $table->foreign('enrollment_id')->references('id')->on('enrollments')->nullable();
+
+            $table->unsignedBigInteger('charge_type_id')->constrained();
+            $table->foreign('charge_type_id')->references('id')->on('charge_types');
+
+            $table->unsignedBigInteger('charge_status_id')->constrained();
+            $table->foreign('charge_status_id')->references('id')->on('charge_statuses');
+
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
@@ -36,6 +43,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('enrollments');
+        Schema::dropIfExists('student_charges');
     }
 };
