@@ -27,7 +27,7 @@ class EnrollmentController extends Controller
          $enrollment = Enrollment::create($validated);
 
          return response()->json([
-          'message' => 'Person created successfully',
+          'message' => 'Inscripción created successfully',
           'data' => $enrollment
          ], 201);
     }
