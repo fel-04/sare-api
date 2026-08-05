@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class GroupController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Listado de grupos (method Index).
      */
     public function index()
     {
@@ -22,7 +22,7 @@ class GroupController extends Controller
 
 
     /**
-     * Store a newly created resource in storage.
+     * Crear un nuevo grupo (method Store).
      */
     public function store(StoreGroupRequest $request)
     {
@@ -30,13 +30,13 @@ class GroupController extends Controller
         $group = Group::create($validated);
 
         return response()->json([
-          'message' => 'Group created successfully',
+          'message' => 'Grupo creado con éxito',
           'data' => $group
          ], 201);
     }
 
     /**
-     * Display the specified resource.
+     * Ver un grupo específico (method Show).
      */
     public function show(Group $group)
     {

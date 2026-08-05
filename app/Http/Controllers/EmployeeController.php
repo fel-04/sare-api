@@ -18,7 +18,7 @@ class EmployeeController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Crear un nuevo colaborador (method Store).
      */
     public function store(StoreEmployeeRequest $request)
     {
@@ -26,13 +26,13 @@ class EmployeeController extends Controller
         $employee = Employee::create($validated);
 
         return response()->json([
-            'message' => 'Colaborador registrado satisfactoriamente',
+            'message' => 'Colaborador creado con éxito',
             'data' => $employee
         ], 200);
     }
 
     /**
-     * Display the specified resource.
+     * Ver un colaborador específico (method Show).
      */
     public function show(Employee $employee)
     {

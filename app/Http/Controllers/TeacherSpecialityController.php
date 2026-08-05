@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Notice;
 use Illuminate\Http\Request;
 
-class NoticeController extends Controller
+class TeacherSpecialityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,7 @@ class NoticeController extends Controller
     }
 
     /**
-     * Crear un nuevo aviso (method Store).
+     * Crear una nueva especialidad para un maestro (method Store).
      */
     public function store(Request $request)
     {
@@ -24,9 +23,9 @@ class NoticeController extends Controller
     }
 
     /**
-     * Ver un aviso específico (method Show).
+     * Ver una especialidad específica (method Show).
      */
-    public function show(Notice $notice)
+    public function show(string $id)
     {
         //
     }
@@ -34,7 +33,7 @@ class NoticeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Notice $notice)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -42,7 +41,7 @@ class NoticeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Notice $notice)
+    public function destroy(string $id)
     {
         //
     }

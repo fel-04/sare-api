@@ -17,7 +17,7 @@ class StudentController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Crear un nuevo estudiante (method Store).
      */
     public function store(StoreStudentRequest $request)
     {
@@ -30,7 +30,7 @@ class StudentController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Ver un estudiante específico (method Show).
      */
     public function show(Student $student)
     {

@@ -18,7 +18,7 @@ class EmergencyContactController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Crear un nuevo contacto de emergencia (method Store).
      */
     public function store(StoreEmergencyContactRequest $request)
     {
@@ -31,7 +31,7 @@ class EmergencyContactController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Ver un contacto de emergencia específico (method Show).
      */
     public function show(EmergencyContact $emergencyContact)
     {

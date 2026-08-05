@@ -19,7 +19,7 @@ class PersonController extends Controller
 
 
     /**
-     * Store a newly created resource in storage.
+     * Crear una nueva persona (method Store).
      */
     public function store(StorePersonRequest $request)
     {
@@ -34,7 +34,7 @@ class PersonController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Ver una persona específica (method Show).
      */
     public function show(Person $person)
     {

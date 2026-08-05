@@ -18,7 +18,7 @@ class EnrollmentController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Crear una nueva inscripción (method Store).
      */
     public function store(StoreEnrollmentRequest $request)
     {
@@ -27,13 +27,13 @@ class EnrollmentController extends Controller
          $enrollment = Enrollment::create($validated);
 
          return response()->json([
-          'message' => 'Inscripción created successfully',
+          'message' => 'Inscripción creada con éxito',
           'data' => $enrollment
          ], 201);
     }
 
     /**
-     * Display the specified resource.
+     * Ver una inscripción específica (method Show).
      */
     public function show(Enrollment $enrollment)
     {

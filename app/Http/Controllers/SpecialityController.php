@@ -18,7 +18,7 @@ class SpecialityController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Crear una nueva especialidad (method Store).
      */
     public function store(StoreSpecialityRequest $request)
     {
@@ -26,7 +26,7 @@ class SpecialityController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Ver una especialidad específica (method Show).
      */
     public function show(Speciality $speciality)
     {

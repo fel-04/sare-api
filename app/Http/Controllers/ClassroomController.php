@@ -18,7 +18,7 @@ class ClassroomController extends Controller
 
 
     /**
-     * Store a newly created resource in storage.
+     * Crear una nueva aula (method Store).
      */
     public function store(StoreClassroomRequest $request)
     {
@@ -32,7 +32,7 @@ class ClassroomController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Ver una aula específica (method Show).
      */
     public function show(Classroom $classroom)
     {

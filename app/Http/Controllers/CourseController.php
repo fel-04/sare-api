@@ -18,7 +18,7 @@ class CourseController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Crear un nuevo curso (method Store).
      */
     public function store(StoreCourseRequest $request)
     {
@@ -32,7 +32,7 @@ class CourseController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Ver un curso específico (method Show).
      */
     public function show(Course $course)
     {

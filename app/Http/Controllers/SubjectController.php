@@ -18,7 +18,7 @@ class SubjectController extends Controller
 
 
     /**
-     * Store a newly created resource in storage.
+     * Crear una nueva materia (method Store).
      */
     public function store(StoreSubjectRequest $request)
     {
@@ -32,7 +32,7 @@ class SubjectController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Ver una materia específica (method Show).
      */
     public function show(string $id)
     {

@@ -17,7 +17,7 @@ class EmployeeContractController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Crear un nuevo contrato de empleado (method Store).
      */
     public function store(StoreEmployeeContractRequest $request)
     {
@@ -26,13 +26,13 @@ class EmployeeContractController extends Controller
         $employee_contract = EmployeeContract::create($validate);
 
         return response()->json([
-            'message' => 'Colaborador registrado satisfactoriamente',
+            'message' => 'Contrato de empleado creado con éxito',
             'data' => $employee_contract
         ], 200);
     }
 
     /**
-     * Display the specified resource.
+     * Ver un contrato de empleado específico (method Show).
      */
     public function show(EmployeeContract $employee_contract)
     {

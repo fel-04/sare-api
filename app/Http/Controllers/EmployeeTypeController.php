@@ -15,7 +15,7 @@ class EmployeeTypeController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Crear un nuevo tipo de empleado (method Store).
      */
     public function store(Request $request)
     {
@@ -23,7 +23,7 @@ class EmployeeTypeController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Ver un tipo de empleado específico (method Show).
      */
     public function show(string $id)
     {

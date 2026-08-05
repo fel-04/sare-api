@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class TeacherController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Listado de maestros (method Index).
      */
     public function index()
     {
@@ -23,7 +23,7 @@ class TeacherController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Crear un nuevo maestro (method Store).
      */
     public function store(StoreTeacherRequest $request)
     {
@@ -37,7 +37,7 @@ class TeacherController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Ver un maestro específico (method Show).
      */
     public function show(Teacher $teacher)
     {
