@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreTeacherSpecialityRequest;
+use App\Http\Requests\UpdateTeacherSpecialityRequest;
+use App\Models\TeacherSpeciality;
 use Illuminate\Http\Request;
 
 class TeacherSpecialityController extends Controller
@@ -17,7 +20,7 @@ class TeacherSpecialityController extends Controller
     /**
      * Crear una nueva especialidad para un maestro (method Store).
      */
-    public function store(Request $request)
+    public function store(StoreTeacherSpecialityRequest $request)
     {
         //
     }
@@ -25,7 +28,7 @@ class TeacherSpecialityController extends Controller
     /**
      * Ver una especialidad específica (method Show).
      */
-    public function show(string $id)
+    public function show(TeacherSpeciality $teacherSpeciality)
     {
         //
     }
@@ -33,7 +36,7 @@ class TeacherSpecialityController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateTeacherSpecialityRequest $request, TeacherSpeciality $teacherSpeciality)
     {
         //
     }
@@ -41,7 +44,7 @@ class TeacherSpecialityController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(TeacherSpeciality $teacherSpeciality)
     {
         //
     }
