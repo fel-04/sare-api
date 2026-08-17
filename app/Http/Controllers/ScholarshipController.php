@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreScholarshipRequest;
+use App\Http\Requests\UpdateScholarshipRequest;
+use App\Models\Scholarship;
 use Illuminate\Http\Request;
 
 class ScholarshipController extends Controller
@@ -18,7 +21,7 @@ class ScholarshipController extends Controller
     /**
      * Crear una nueva beca (method Store).
      */
-    public function store(Request $request)
+    public function store(StoreScholarshipRequest $request)
     {
         //
     }
@@ -26,7 +29,7 @@ class ScholarshipController extends Controller
     /**
      * Ver una beca específica (method Show).
      */
-    public function show(string $id)
+    public function show(Scholarship $scholarship)
     {
         //
     }
@@ -35,7 +38,7 @@ class ScholarshipController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateScholarshipRequest $request, Scholarship $scholarship)
     {
         //
     }
@@ -43,7 +46,7 @@ class ScholarshipController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Scholarship $scholarship)
     {
         //
     }
