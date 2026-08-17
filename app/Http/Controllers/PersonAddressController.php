@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePersonAddressRequest;
+use App\Http\Requests\UpdatePersonAddressRequest;
+use App\Models\PersonAddress;
 use Illuminate\Http\Request;
 
 class PersonAddressController extends Controller
@@ -15,33 +18,17 @@ class PersonAddressController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Crear una nueva dirección de persona (method Store).
      */
-    public function create()
+    public function store(StorePersonAddressRequest $request)
     {
         //
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Ver una dirección de persona específica (method Show).
      */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function show(PersonAddress $personAddress)
     {
         //
     }
@@ -49,7 +36,7 @@ class PersonAddressController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdatePersonAddressRequest $request, PersonAddress $personAddress)
     {
         //
     }
@@ -57,7 +44,7 @@ class PersonAddressController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(PersonAddress $personAddress)
     {
         //
     }
