@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreNoticeRequest;
+use App\Http\Requests\UpdateNoticeRequest;
 use App\Models\Notice;
 use Illuminate\Http\Request;
 
@@ -18,7 +20,7 @@ class NoticeController extends Controller
     /**
      * Crear un nuevo aviso (method Store).
      */
-    public function store(Request $request)
+    public function store(StoreNoticeRequest $request)
     {
         //
     }
@@ -34,7 +36,7 @@ class NoticeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Notice $notice)
+    public function update(UpdateNoticeRequest $request, Notice $notice)
     {
         //
     }
