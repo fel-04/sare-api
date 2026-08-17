@@ -13,6 +13,7 @@ use App\Http\Controllers\ScholarshipController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::resource('scholarships', ScholarshipController::class)->only(['store', 'show']);
 
     Route::post('/auth/logout', [AuthController::class, 'logout']);
+    Route::post('/user/import', [UserController::class, 'import']);
 });
 
 Route::post('/auth/login', [AuthController::class, 'login']);
