@@ -31,8 +31,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::resource('emergency-contacts', EmergencyContactController::class)->only(['store', 'show']);
     Route::resource('scholarships', ScholarshipController::class)->only(['store', 'show']);
 
-    Route::post('/auth/logout', [AuthController::class, 'logout']);
     Route::post('/user/import', [UserController::class, 'import']);
+    Route::resource('users', UserController::class)->only(['index','show']);
+
+    Route::post('/auth/logout', [AuthController::class, 'logout']);
 });
 
 Route::post('/auth/login', [AuthController::class, 'login']);
