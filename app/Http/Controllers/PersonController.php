@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePersonRequest;
+use App\Http\Requests\UpdatePersonRequest;
 use App\Models\Person;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,9 @@ class PersonController extends Controller
      */
     public function index()
     {
-        //
+        $persons = Person::all();
+
+        return response()->json($persons);
     }
 
 
@@ -44,16 +47,27 @@ class PersonController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdatePersonRequest $request, Person $person)
     {
-        //
+        $validated = $request->validated();
+
+        $person->update($validated);
+
+        return response()->json([
+            'message' => 'Person updated successfully',
+            'data' => $person
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Person $person)
     {
-        //
+        $person->delete();
+
+        return response()->json([
+            'message' => 'Person deleted successfully'
+        ]);
     }
 }
