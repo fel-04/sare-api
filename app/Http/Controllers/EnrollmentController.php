@@ -14,7 +14,8 @@ class EnrollmentController extends Controller
      */
     public function index()
     {
-        //
+       $enrollments = Enrollment::all();
+       return response()->json($enrollments);
     }
 
     /**
@@ -37,15 +38,22 @@ class EnrollmentController extends Controller
      */
     public function show(Enrollment $enrollment)
     {
-        //
+        return response()->json($enrollment);
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(UpdateEnrollmentRequest $request, Enrollment $enrollment)
-    {
-        //
+        {
+        $validated = $request->validated();
+
+        $enrollment->update($validated);
+
+        return response()->json([
+            'message' => 'Inscripción actualizada con éxito',
+            'data' => $enrollment
+        ]);
     }
 
     /**
@@ -53,6 +61,10 @@ class EnrollmentController extends Controller
      */
     public function destroy(Enrollment $enrollment)
     {
-        //
+        $enrollment->delete();
+
+        return response()->json([
+            'message' => 'Inscripción eliminada con éxito'
+        ]);
     }
 }

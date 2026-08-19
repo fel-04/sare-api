@@ -38,6 +38,6 @@ class StoreEnrollmentRequest extends FormRequest
             'student_id' =>'sometimes|exists:students,id',
             'group_id' =>'sometimes|exists:groups,id',
             'school_period_id' =>'sometimes|exists:school_periods,id',
-            ];
+        ];
     }
 }

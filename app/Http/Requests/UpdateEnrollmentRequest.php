@@ -12,7 +12,7 @@ class UpdateEnrollmentRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,14 @@ class UpdateEnrollmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'enrollment_date' =>'required|date|',
+            'student_uuid' =>'required|uuid|exists:students,uuid',
+            'group_uuid' =>'required|uuid|exists:groups,uuid',
+            'school_period_uuid' =>'required|uuid|exists:school_periods,uuid',
+
+            'student_id' =>'sometimes|exists:students,id',
+            'group_id' =>'sometimes|exists:groups,id',
+            'school_period_id' =>'sometimes|exists:school_periods,id',
         ];
     }
 }
