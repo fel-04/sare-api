@@ -12,7 +12,7 @@ class UpdateStudentRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,10 @@ class UpdateStudentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            //'student_number' => 'required|unique:students,student_number',
+            'enrollment_date' => 'required|date|after_or_equal:today',
+            'admission_date' => 'required|date|after_or_equal:today',
+            'status_student_id' => 'required|exists:status_students,id',
         ];
     }
 }

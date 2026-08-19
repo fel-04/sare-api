@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->group(function () {
     Route::resource('persons', PersonController::class)->only(['index','store', 'show', 'update', 'destroy']);
     Route::resource('teachers', TeacherController::class)->only(['index','store', 'show']);
-    Route::resource('students', StudentController::class)->only(['store', 'show']);
+    Route::resource('students', StudentController::class)->only(['index','store', 'show', 'update', 'destroy']);
     Route::resource('enrollments', EnrollmentController::class)->only(['store', 'show']);
     Route::resource('groups', GroupController::class)->only(['store', 'show']);
     Route::resource('employees', EmployeeController::class)->only(['store', 'show']);
