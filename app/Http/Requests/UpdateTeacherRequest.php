@@ -12,7 +12,7 @@ class UpdateTeacherRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,8 +22,11 @@ class UpdateTeacherRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
+       return [
+            'status_teacher_uuid' => 'required|uuid|exists:status_teachers,uuid',
+
+            'status_teacher_id' => 'sometimes|exists:status_teachers,id',
+
         ];
     }
 }

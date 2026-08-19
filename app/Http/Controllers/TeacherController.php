@@ -49,7 +49,14 @@ class TeacherController extends Controller
      */
     public function update(UpdateTeacherRequest $request, Teacher $teacher)
     {
-        //
+        $validated = $request->validated();
+
+        $teacher->update($validated);
+
+        return response()->json([
+            'message' => 'Teacher updated successfully',
+            'data' => $teacher
+        ]);
     }
 
     /**
@@ -57,6 +64,10 @@ class TeacherController extends Controller
      */
     public function destroy(Teacher $teacher)
     {
-        //
+        $teacher->delete();
+
+        return response()->json([
+            'message' => 'Teacher deleted successfully'
+        ]);
     }
 }
