@@ -12,7 +12,7 @@ class UpdateGroupRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,8 @@ class UpdateGroupRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name'=>'required|string|max:255',
+            'grade_level_id' =>'required|exists:grade_levels,id',
         ];
     }
 }
