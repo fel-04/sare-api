@@ -23,7 +23,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::resource('students', StudentController::class)->only(['index','store', 'show', 'update', 'destroy']);
     Route::resource('enrollments', EnrollmentController::class)->only(['index','store', 'show', 'update', 'destroy']);
     Route::resource('groups', GroupController::class)->only(['index','store', 'show', 'update', 'destroy']);
-    Route::resource('employees', EmployeeController::class)->only(['store', 'show']);
+    Route::resource('employees', EmployeeController::class)->only(['index','store', 'show', 'update', 'destroy']);
     Route::resource('employees-contracts', EmployeeContractController::class)->only(['store', 'show']);
     Route::resource('classrooms', ClassroomController ::class)->only(['store', 'show']);
     Route::resource('courses', CourseController::class)->only(['store', 'show']);

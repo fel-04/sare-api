@@ -14,7 +14,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        //
+        $employees = Employee::all();
+        return response()->json($employees);
     }
 
     /**
@@ -36,7 +37,7 @@ class EmployeeController extends Controller
      */
     public function show(Employee $employee)
     {
-        //
+        return response()->json($employee);
     }
 
     /**
@@ -44,7 +45,13 @@ class EmployeeController extends Controller
      */
     public function update(UpdateEmployeeRequest $request, Employee $employee)
     {
-        //
+        $validated = $request->validated();
+        $employee->update($validated);
+
+        return response()->json([
+          'message' => 'Colaborador actualizado con éxito',
+          'data' => $employee
+         ], 201);
     }
 
     /**
@@ -52,6 +59,9 @@ class EmployeeController extends Controller
      */
     public function destroy(Employee $employee)
     {
-        //
+        $employee->delete();
+        return response()->json([
+            'message' => 'Colaborador eliminado con éxito'
+        ]);
     }
 }
